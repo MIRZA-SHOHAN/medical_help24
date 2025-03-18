@@ -33,7 +33,7 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('/about', [HomeController::class, 'about']);
 Route::get('/post-add', [HomeController::class, 'post_add']);
 Route::post('/save_doctor', [DoctorController::class, 'store']);
-// Route::get('/doctor-details', [HomeController::class, 'doctor_details']);
+Route::get('/doctor-details', [HomeController::class, 'doctor_details']);
 
 Route::get('/service', [HomeController::class, 'service']);
 Route::get('/doctors', [HomeController::class, 'doctor']);

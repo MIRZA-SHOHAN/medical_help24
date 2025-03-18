@@ -153,9 +153,9 @@ class HomeController extends Controller
  
       return view('post_add', ['page'=>'doctor']); 
     }
-//     public function doctor_details(){
-//       return view('doctor_details', ['page'=>'doctor']); 
-//     } 
+    public function doctor_details(){
+      return view('doctor_details', ['page'=>'doctor']); 
+    } 
 
 //     public function edit($id){       
 //       $data = TeamMember::find($id);      
