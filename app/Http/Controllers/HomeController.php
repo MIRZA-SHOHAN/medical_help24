@@ -76,6 +76,7 @@ class HomeController extends Controller
             ->where('ratings', '!=', null)
             ->where('active', 'on')
             ->get();
+            
    
     
       return view('home', ['page'=>'home', 'testimonial'=>$testimonial, 'doctors'=>$doctors, 'hospitals'=>$hospitals, 'clinic'=>$clinic,'fitness_center'=>$fitness_center,'blood_bank'=>$blood_bank,'blogs'=>$blogs,'new_registerd'=>$new_registerd,]); 
@@ -153,9 +154,38 @@ class HomeController extends Controller
  
       return view('post_add', ['page'=>'doctor']); 
     }
-    public function doctor_details(){
-      return view('doctor_details', ['page'=>'doctor']); 
+    public function doctor_details($id){
+      $data = Doctor::where('id', $id)->first();
+      return view('doctor_details', ['page'=>'doctor_details']); 
+    }
+
+    public function hospital_detail($id)
+{
+//     dd($id);  
+    $data = Hospital::where('id', $id)
+                    ->where('type', 'Hospital')
+                    ->first();
+            // dd($data);  
+    return view('hospital_details', ['page' => 'home', 'data' => $data]); 
+}
+//     public function hospital_detail($id){
+//       $data = Hospital::where('id', $id)
+//                 ->where('type', 'Hospital')
+//                 ->first();
+//             dd($data); 
+//       return view('hospital_details', ['page'=>'hospital_details','data'=>$data]); 
+//     }
+     public function page_list($id){
+      $data = Hospital::where('id', $id)->first();
+      return view('page_list', ['page'=>'page_list']); 
     } 
+
+//     public function show($slug){
+//       $data = Blog::where('slug', $slug)->first();
+//       dd($data);
+//       return view('blog_details', ['page'=>'blog_detail', 'data'=>$data, ]); 
+//     }
+
 
 //     public function edit($id){       
 //       $data = TeamMember::find($id);      

@@ -38,7 +38,7 @@ class DoctorController extends Controller
 
       public function store(Request $request)
       {      
-        dd($request);  
+        // dd($request);  
 
         $data = new Doctor;
         //$data->title = $request->title;       
@@ -52,6 +52,8 @@ class DoctorController extends Controller
         $data->hospital_id = $request->hospital_id;
         $data->specialities = $request->specialities;
         $data->gender = $request->gender;
+        $data->set_time = $request->set_time;
+        $data->set_days = $request->set_days;
         $data->sort_order = $request->sort_order;
         $data->description = $request->description;
         $data->short_description = $request->short_description;

@@ -33,11 +33,13 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('/about', [HomeController::class, 'about']);
 Route::get('/post-add', [HomeController::class, 'post_add']);
 Route::post('/save_doctor', [DoctorController::class, 'store']);
-Route::get('/doctor-details', [HomeController::class, 'doctor_details']);
+Route::get('/doctor-details/{id}', [HomeController::class, 'doctor_details']);
+Route::get('/hospital-details/{id}', [HomeController::class, 'hospital_detail']);
+Route::get('/page-list/{id}', [HomeController::class, 'page_list']);
 
 Route::get('/service', [HomeController::class, 'service']);
 Route::get('/doctors', [HomeController::class, 'doctor']);
-Route::get('/doctor-details/{id}', [TeamMemberController::class, 'show']);
+// Route::get('/doctor-details/{id}', [TeamMemberController::class, 'show']);
 Route::get('/appointment/{id?}', [TeamMemberController::class, 'appointment']);
 Route::post('/save_appointment', [TeamMemberController::class, 'appointment_store']);
 

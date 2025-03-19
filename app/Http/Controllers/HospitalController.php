@@ -91,7 +91,7 @@ class HospitalController extends Controller
 
       public function store(Request $request)
       {      
-        // dd($request);  
+        dd($request);  
 
         $data = new Hospital;
         //$data->title = $request->title;       

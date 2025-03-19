@@ -112,7 +112,7 @@
                     <td class="text-center">
                         <div class="dropdown icon-dropdown" style="display: flex; flex-direction: row;">
                           
-                            <a class="dropdown-item" style="margin-right: 5px" href="/edit-post/{{$item->id}}" target="_blank">
+                            <a class="dropdown-item" style="margin-right: 5px" href="/edit-hospital/{{$item->id}}" target="_blank">
                                 <i class="fa fa-edit" style="font-size:16px; color: #7A70BA; "></i> 
                             </a>
                             <a class="dropdown-item" href="/delete-post/{{$item->id}}">

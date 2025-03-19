@@ -459,11 +459,20 @@
                             <div class="card bg-card-light bg-primary-card bg-white">
                                 <div class="card-body">
                                     <div class="cat-item text-center">
-                                        <a href="page-list.html"></a>
+                                        <a href="/page-list/{id}"></a>
                                         <div class="cat-icon bg-primary-transparent brround text-primary"><i class="fa fa-hospital-o"></i></div>
                                         <div class="cat-desc">
+
+
                                             <h5 class="mb-2">Hospitals</h5>
-                                            <p class="badge badge-pill bg-light font-weight-semibold mb-0">45</p>
+                                            @php
+                                            $totalHospitals = DB::table('hospitals')
+                                                ->where('type', 'Hospital')
+                                                ->count();
+
+                                            @endphp
+                                            <p class="badge badge-pill bg-light font-weight-semibold mb-0">{{ $totalHospitals }}</p>
+
                                         </div>
                                     </div>
                                 </div>
@@ -477,7 +486,11 @@
                                         <div class="cat-icon bg-secondary-transparent brround text-secondary"><i class="fa fa-user-md"></i></div>
                                         <div class="cat-desc">
                                             <h5 class="mb-2">Doctors</h5>
-                                            <p class="badge badge-pill bg-light font-weight-semibold mb-0">32</p>
+                                            @php
+                                            $totalDoctors = DB::table('doctors')->count();
+
+                                            @endphp
+                                            <p class="badge badge-pill bg-light font-weight-semibold mb-0">{{ $totalDoctors }}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -488,10 +501,16 @@
                                 <div class="card-body">
                                     <div class="cat-item text-center">
                                         <a href="page-list.html"></a>
-                                        <div class="cat-icon bg-info-transparent brround text-info"><i class="fa fa-building-o"></i></div>
+                                        <div class="cat-icon bg-info-transparent brround text-info"><i class="fas fa-building"></i></div>
                                         <div class="cat-desc">
                                             <h5 class="mb-2">FitnesCenters</h5>
-                                            <p class="badge badge-pill bg-light font-weight-semibold mb-0">19</p>
+                                            @php
+                                            $fitnessCenters = DB::table('hospitals')
+                                                ->where('type', 'Fitness Centers')
+                                                ->count();
+
+                                            @endphp
+                                            <p class="badge badge-pill bg-light font-weight-semibold mb-0">{{ $fitnessCenters }}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -519,7 +538,13 @@
                                         <div class="cat-icon bg-success-transparent brround text-success"><i class="fa fa-stethoscope"></i></div>
                                         <div class="cat-desc">
                                             <h5 class="mb-2">Clinics</h5>
-                                            <p class="badge badge-pill bg-light font-weight-semibold mb-0">23</p>
+                                            @php
+                                            $clinics = DB::table('hospitals')
+                                                ->where('type', 'Clinic')
+                                                ->count();
+
+                                            @endphp
+                                            <p class="badge badge-pill bg-light font-weight-semibold mb-0">{{ $clinics }}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -533,7 +558,13 @@
                                         <div class="cat-icon bg-warning-transparent brround text-warning"><i class="fa fa-heartbeat"></i></div>
                                         <div class="cat-desc">
                                             <h5 class="mb-2">Bloodbanks</h5>
-                                            <p class="badge badge-pill bg-light font-weight-semibold mb-0">52</p>
+                                                @php
+                                                $Bloodbanks = DB::table('hospitals')
+                                                    ->where('type', 'Blood Bank')
+                                                    ->count();
+
+                                                @endphp
+                                            <p class="badge badge-pill bg-light font-weight-semibold mb-0">{{ $Bloodbanks }}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -589,7 +620,7 @@
                                                 </div>
                                                 <div class="card-footer p-0 btn-appointment">
                                                     <div class="btn-group w-100">
-                                                        <a class="w-50 btn btn-outline-light p-2 border-top-0 border-bottom-0 border-start-0 border-end-0" href="hospital-details.html"><i class="fas fa-eye me-1"></i> Visit Website</a>
+                                                        <a class="w-50 btn btn-outline-light p-2 border-top-0 border-bottom-0 border-start-0 border-end-0" href="hospital-details.html"><i class="fas fa-eye me-1"></i> Appointemnt</a>
                                                         <a href="tel:{{$item->m_no}}" class="w-50 btn btn-outline-light p-2 border-top-0 border-bottom-0 border-end-0 call-btn">
                                                             <div class="call-btn-1"><i class="fas fa-phone me-1"></i> Call</div>
                                                             <div class="call-number">+65 847596 82</div>
@@ -638,7 +669,7 @@
                                             <div class="col-lg-6 col-md-12 col-xl-3">
                                                 <div class="card">
                                                     <div class="item-card7-imgs">
-                                                        <a href="doctor-details.html"></a> <img alt="img" class="cover-image" src="{{ asset('frontend/images/0-33.jpg') }}" />
+                                                        <a href="/doctor-details/{id}"></a> <img alt="img" class="cover-image" src="{{ asset('frontend/images/0-33.jpg') }}" />
                                                         <div class="tag-text"><span class="bg-dark tag-option">{{$item->specialities}}</span></div>
                                                     </div>
                                                     <div class="item-card2-icons d-none">
@@ -647,7 +678,7 @@
                                                     </div>
                                                     <div class="card-body">
                                                         <div class="item-card2">
-                                                            <a class="text-dark" href="doctor-details.html">
+                                                            <a class="text-dark" href="/doctor-details/{id}">
                                                                 <h4 class="font-weight-semibold mt-1 mb-1">{{$item->name}}<i class="fas fa-check-circle text-success fs-14 ms-1"></i></h4>
                                                             </a>
                                                             <p class="text-muted fs-13 mb-1"><i class="fa fa-user-md text-muted me-2"></i>{{$item->degree}}</p>
@@ -676,9 +707,9 @@
                                                     </div>
                                                     <div class="card-footer p-0 btn-appointment">
                                                         <div class="btn-group w-100">
-                                                            <a class="w-50 btn btn-outline-light p-2 border-top-0 border-bottom-0 border-start-0 border-end-0" href="doctor-details.html"><i class="fas fa-eye me-1"></i> Visit Website</a>
+                                                            <a class="w-50 btn btn-outline-light p-2 border-top-0 border-bottom-0 border-start-0 border-end-0" href="doctor-details.html"><i class="fas fa-eye me-1"></i> Appointment</a>
                                                             <a class="w-50 btn btn-outline-light p-2 border-top-0 border-bottom-0 border-end-0" href="javascript:void(0);" data-bs-target="#exampleModal" data-bs-toggle="modal">
-                                                                <i class="fas fa-phone me-1"></i> Appointment
+                                                                <i class="fas fa-phone me-1"></i> Call
                                                             </a>
                                                         </div>
                                                     </div>
@@ -693,7 +724,7 @@
                                             <div class="col-lg-6 col-md-12 col-xl-3">
                                                 <div class="card">
                                                     <div class="item-card7-imgs">
-                                                        <a href="hospital-details.html"></a> <img alt="img" class="cover-image" src="{{ asset('frontend/images/0-23.jpg') }}" />
+                                                        <a href="/hospital-details/{id}"></a> <img alt="img" class="cover-image" src="{{ asset('frontend/images/0-23.jpg') }}" />
                                                         <!-- <div class="tag-text"><span class="bg-dark tag-option">Hospital</span></div> -->
                                                     </div>
                                                     <!-- <div class="item-card2-icons">
@@ -702,7 +733,9 @@
                                                     </div> -->
                                                     <div class="card-body">
                                                         <div class="item-card2">
-                                                            <a class="text-dark" href="hospital-details.html">
+                                                            <!-- <a class="text-dark" href="/hospital-details/{id}"> -->
+                                                                <a class="text-dark" href="/hospital-details/{{ $item->id }}">
+
                                                                 <h4 class="font-weight-semibold mt-1 mb-1">{{$item->title}}<i class="fas fa-check-circle text-success fs-14 ms-1"></i></h4>
                                                             </a>
                                                             <p class="text-muted fs-13 mb-1"><i class="fa fa-map-marker me-1"></i> {{$item->address}}</p>
@@ -731,7 +764,7 @@
                                                     </div>
                                                     <div class="card-footer p-0 btn-appointment">
                                                         <div class="btn-group w-100">
-                                                            <a class="w-50 btn btn-outline-light p-2 border-top-0 border-bottom-0 border-start-0 border-end-0" href="hospital-details.html"><i class="fas fa-eye me-1"></i> Visit Website</a>
+                                                            <a class="w-50 btn btn-outline-light p-2 border-top-0 border-bottom-0 border-start-0 border-end-0" href="hospital-details.html"><i class="fas fa-eye me-1"></i> Appointemnt</a>
                                                             <a href="tel:+8801792017302" class="w-50 btn btn-outline-light p-2 border-top-0 border-bottom-0 border-end-0 call-btn">
                                                                 <div class="call-btn-1"><i class="fas fa-phone me-1"></i> Call</div>
                                                                 <div class="call-number">+65 847596 82</div>
@@ -778,7 +811,7 @@
                                                     </div>
                                                     <div class="card-footer p-0 btn-appointment">
                                                         <div class="btn-group w-100">
-                                                            <a class="w-50 btn btn-outline-light p-2 border-top-0 border-bottom-0 border-start-0 border-end-0" href="hospital-details.html"><i class="fas fa-eye me-1"></i> Visit Website</a>
+                                                            <a class="w-50 btn btn-outline-light p-2 border-top-0 border-bottom-0 border-start-0 border-end-0" href="hospital-details.html"><i class="fas fa-eye me-1"></i> Appointemnt</a>
                                                             <a href="javascript:void(0);" class="w-50 btn btn-outline-light p-2 border-top-0 border-bottom-0 border-end-0 call-btn">
                                                                 <div class="call-btn-1"><i class="fas fa-phone me-1"></i> Call</div>
                                                                 <div class="call-number">+65 847596 82</div>
@@ -818,7 +851,7 @@
                                                     </div>
                                                     <div class="card-footer p-0 btn-appointment">
                                                         <div class="btn-group w-100">
-                                                            <a class="w-50 btn btn-outline-light p-2 border-top-0 border-bottom-0 border-start-0 border-end-0" href="hospital-details.html"><i class="fas fa-eye me-1"></i> Visit Website</a>
+                                                            <a class="w-50 btn btn-outline-light p-2 border-top-0 border-bottom-0 border-start-0 border-end-0" href="hospital-details.html"><i class="fas fa-eye me-1"></i> Appointemnt</a>
                                                             <a href="javascript:void(0);" class="w-50 btn btn-outline-light p-2 border-top-0 border-bottom-0 border-end-0 call-btn">
                                                                 <div class="call-btn-1"><i class="fas fa-phone me-1"></i> Call</div>
                                                                 <div class="call-number">+65 847596 82</div>
@@ -862,7 +895,7 @@
                                                     </div>
                                                     <div class="card-footer p-0 btn-appointment">
                                                         <div class="btn-group w-100">
-                                                            <a class="w-50 btn btn-outline-light p-2 border-top-0 border-bottom-0 border-start-0 border-end-0" href="hospital-details.html"><i class="fas fa-eye me-1"></i> Visit Website</a>
+                                                            <a class="w-50 btn btn-outline-light p-2 border-top-0 border-bottom-0 border-start-0 border-end-0" href="hospital-details.html"><i class="fas fa-eye me-1"></i> Appointment</a>
                                                             <a href="tel:{{$item->mobile}}" class="w-50 btn btn-outline-light p-2 border-top-0 border-bottom-0 border-end-0 call-btn">
                                                                 <div class="call-btn-1"><i class="fas fa-phone me-1"></i> Call</div>
                                                                 <div class="call-number">+65 847596 82</div>
@@ -1484,7 +1517,7 @@
             </section>
             <!--Section-->
             <!--Section-->
-            <section class="sptb">
+            <section class="sptb d-none">
                 <div class="container">
                     <div class="section-title center-block text-center">
                         <h2>News &amp; Latest Posts</h2>

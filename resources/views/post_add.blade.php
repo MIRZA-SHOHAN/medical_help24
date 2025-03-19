@@ -3,7 +3,7 @@
 
 
 
-
+<!-- 
 <section>
         <div class="about-1 cover-image sptb bg-background-color" 
         style="background: url('{{ asset('frontend/images/banner2.jpg') }}') center center;">
@@ -20,7 +20,24 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
+
+
+<div class="bannerimg cover-image bg-background3" data-image-src="../assets/images/banners/banner2.jpg" style="background: url('../assets/images/banners/banner2.jpg') center center;">
+    <div class="header-text mb-0">
+        <div class="container">
+            <div class="text-center text-white">
+                <h1>Ad Post</h1>
+                <ol class="breadcrumb text-center">
+                    <li class="breadcrumb-item"><a href="javascript:void(0);">Home</a></li>
+                    <li class="breadcrumb-item"><a href="javascript:void(0);">Pages</a></li>
+                    <li class="breadcrumb-item active text-white" aria-current="page">Ad Post</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 
 <section class="sptb">
@@ -34,16 +51,28 @@
                         <div class="card-body custom-card">
                                 <div class="post-content" id="doctors" style="display: block;">
                                     <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label class="form-label text-dark">Hospital Name</label>
-                                                <input type="text" name="h_name" class="form-control"  placeholder="Enter Hospital Name" />
-                                            </div>
+                                    <div class="col-md-6">
+                                            <div class="form-group ">
+                                                <label for="" class="form-label text-dark">Hospital <span class="requarde">*</span></label>
+                                                <select class="form-control ss" name="hospital_id" id="" required>
+                                                <option value="">Select Hospital</option>
+                                                    @php
+                                                        $hospital = DB::table('hospitals')
+                                                        ->where('type', 'Hospital')
+                                                        ->get();
+                                                        
+                                                        // dd($zone);
+                                                    @endphp
+                                                    @foreach($hospital as $item) 
+                                                        <option value="{{$item->id}}">{{$item->title}} </option>
+                                                    @endforeach 
+                                                </select>
+                                            </div> 
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label class="form-label text-dark">Dr. Name</label>
-                                                <input type="text" name="dr_name" class="form-control" placeholder="Enter  Name" />
+                                                <label class="form-label text-dark">Dr. Name<span class="requarde">*</span></label>
+                                                <input type="text" name="name" class="form-control" placeholder="Enter  Name" />
                                             </div>
                                         </div>
                                         <div class="col-md-6">
@@ -53,9 +82,9 @@
                                             </div>
 
                                         </div>
-                                        <div class="col-md-6 d-none">
+                                        <div class="col-md-6">
                                             <div class="form-group ">
-                                                <label for="">Department <span class="requarde">*</span></label>
+                                                <label for="" class="form-label text-dark">Department <span class="requarde">*</span></label>
                                                 <select class="form-control ss" name="dep_id" id="" required>
                                                 <option value="">Select department</option>
                                                 @php
@@ -68,7 +97,6 @@
                                                 @endforeach 
                                                 </select>
                                             </div> 
-
                                         </div>
 
                                     
@@ -76,8 +104,15 @@
 
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label class="form-label text-dark">Specialties</label>
+                                                <label class="form-label text-dark">Designation</label>
                                                 <input type="text" name="specialitis" class="form-control" />
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="form-label text-dark">Specialties</label>
+                                                <input type="text" name="specialities" class="form-control" />
                                             </div>
 
                                         </div>
@@ -153,7 +188,7 @@
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <div class="form-group"><label class="form-label text-dark">Consultency Fee</label> <input type="text" name="consultency" class="form-control" /></div>
+                                                <div class="form-group"><label class="form-label text-dark">Consultency Fee</label> <input type="text" name="fees" class="form-control" /></div>
                                                 
                                             </div>
                                         </div>
