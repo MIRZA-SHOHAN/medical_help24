@@ -578,7 +578,7 @@ if($settings->active != 'on'){  ?>
                                     <hr class="deep-purple text-primary accent-2 mb-4 mt-0 d-inline-block mx-auto" />
                                     <ul class="list-unstyled list-inline follow-footer">
                                         <li class="list-inline-item">
-                                            <a class="btn-floating btn-sm"> <i class="fab fa-facebook-f"></i></i></i></a>
+                                            <a class="btn-floating btn-sm"> <i class="fab fa-facebook-f"></i></a>
                                         </li>
                                         <li class="list-inline-item">
                                             <a class="btn-floating btn-sm"><i class="fab fa-twitter"></i></a>

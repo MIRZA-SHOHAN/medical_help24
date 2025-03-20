@@ -29,8 +29,8 @@
             <div class="text-center text-white">
                 <h1>Ad Post</h1>
                 <ol class="breadcrumb text-center">
-                    <li class="breadcrumb-item"><a href="javascript:void(0);">Home</a></li>
-                    <li class="breadcrumb-item"><a href="javascript:void(0);">Pages</a></li>
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <!-- <li class="breadcrumb-item"><a href="javascript:void(0);">Pages</a></li> -->
                     <li class="breadcrumb-item active text-white" aria-current="page">Ad Post</li>
                 </ol>
             </div>

@@ -53,6 +53,7 @@
                 <div class="card overflow-hidden">
                     <div class="card-body">
                         <div class="item-det mb-4">
+                           
                             <a href="javascript:void(0);" class="text-dark"><h3>{{$data->title}}</h3></a>
                            
                         </div>
@@ -125,13 +126,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card-footer">
+                    <!-- <div class="card-footer">
                         <div class="btn-list">
                             <a href="javascript:void(0);" class="btn btn-danger icons" data-bs-toggle="modal" data-bs-target="#report"><i class="icon icon-exclamation me-1"></i> Report Abuse</a>
                             <a href="javascript:void(0);" class="btn btn-info icons"><i class="icon icon-share me-1"></i> Share Ad</a> <a href="javascript:void(0);" class="btn btn-primary icons"><i class="icon icon-heart me-1"></i> 678</a>
                             <a href="javascript:void(0);" class="btn btn-secondary icons"><i class="icon icon-printer me-1"></i> Print</a>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <!--Comments-->
                 

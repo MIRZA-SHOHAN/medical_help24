@@ -154,30 +154,60 @@ class HomeController extends Controller
  
       return view('post_add', ['page'=>'doctor']); 
     }
-    public function doctor_details($id){
-      $data = Doctor::where('id', $id)->first();
-      return view('doctor_details', ['page'=>'doctor_details']); 
-    }
+//     public function doctor_details($id){
+//       $data = Doctor::where('id', $id)->first();
+//       return view('doctor_details', ['page'=>'home','data' => $data]); 
+//     }
+//     public function hospital_detail($id, $type)
 
-    public function hospital_detail($id)
-{
-//     dd($id);  
-    $data = Hospital::where('id', $id)
-                    ->where('type', 'Hospital')
-                    ->first();
-            // dd($data);  
-    return view('hospital_details', ['page' => 'home', 'data' => $data]); 
-}
+//     {
+//             dd($type);
+
+//         $hospital = Hospital::findOrFail($id);
+    
+
+//         $data = Hospital::where('id', $id)->where('type', $type)->get();
+//         dd($data);
+    
+//         return view('hospital_details', ['page' => 'hospital_details', 'hospital' => $hospital,'data' => $data,'type' => $type]);
+//     }
+
+    public function hospital($id)
+      {
+      // dd($id);  
+      $data = Hospital::where('id', $id )
+            //     ->where('type', $type) 
+                ->first(); 
+  
+            // dd($data);
+      if ($data->type === 'Hospital') {
+            return view('hospital_details', ['page' => 'home', 'data' => $data]);
+        } elseif ($data->type === 'Blood Bank') {
+            return view('doctor_details', ['page' => 'home', 'data' => $data]);}
+      elseif ($data->type === 'Clinic') {
+            return view('doctor_details', ['page' => 'home', 'data' => $data]);
+        } else {
+            return abort(404, 'Page not found');
+        }
+      }
+      
+//     return view('hospital_details', ['page' => 'home', 'data' => $data, ]); }
+// }
 //     public function hospital_detail($id){
 //       $data = Hospital::where('id', $id)
 //                 ->where('type', 'Hospital')
 //                 ->first();
-//             dd($data); 
-//       return view('hospital_details', ['page'=>'hospital_details','data'=>$data]); 
+//             // dd($data); 
+//       return view('hospital_details', ['page'=>'home','data'=>$data]); 
 //     }
      public function page_list($id){
       $data = Hospital::where('id', $id)->first();
-      return view('page_list', ['page'=>'page_list']); 
+
+      $hospitals = Hospital::orderBy('id', 'asc') 
+            ->where('type', 'Hospital')
+            ->where('active', 'on')
+            ->get();
+      return view('page_list', ['page'=>'page_list', 'data'=>$data, 'hospitals'=>$hospitals,  ]); 
     } 
 
 //     public function show($slug){

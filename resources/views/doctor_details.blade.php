@@ -55,14 +55,15 @@
                     <div class="card-body item-user">
                         <div class="profile-pic mb-0">
                             <div class="d-md-flex">
-                                <img src="../assets/images/media/doctors/2.jpg" class="w-150 h-150 br-2" alt="user" />
+                                <img src="{{ asset('frontend/images/dr_img.jpg') }}" class="w-150 h-150 br-2" alt="user" />
                                 <div class="ms-4">
                                     <a href="userprofile.html" class="text-dark">
-                                        <h4 class="mt-3 mb-1 font-weight-bold">Dr. Julia <i class="ion-checkmark-circled text-success fs-14 ms-1"></i></h4>
+                                        <h4 class="mt-3 mb-1 font-weight-bold">{{$data->name}}<i class="fas fa-check-circle text-success fs-14 ms-1"></i></h4>
                                     </a>
-                                    <span class="text-gray">Gynecologist</span><br />
-                                    <span class="text-muted">Member Since November 2010</span><br />
-                                    <div class="rating-stars d-inline-flex mb-2 me-3">
+                                    <span class="text-gray">{{$data->degree}}</span><br />
+                                    <span class="text-gray">{{$data->specialities}}</span><br />
+                                    <!-- <span class="text-muted">Member Since November 2010</span><br /> -->
+                                    <!-- <div class="rating-stars d-inline-flex mb-2 me-3">
                                         <input type="number" readonly="readonly" class="rating-value star" name="rating-stars-value" value="4" />
                                         <div class="rating-stars-container me-2">
                                             <div class="rating-star sm is--active"><i class="fa fa-star"></i></div>
@@ -72,8 +73,8 @@
                                             <div class="rating-star sm"><i class="fa fa-star"></i></div>
                                         </div>
                                         4.0
-                                    </div>
-                                    <div class="mt-2 mb-0"><a href="javascript:void(0);" class="btn btn-secondary btn-sm">1245 Views</a> <a href="javascript:void(0);" class="btn btn-info btn-sm">850 Patients</a></div>
+                                    </div> -->
+                                    <!-- in -->
                                 </div>
                             </div>
                         </div>
@@ -99,16 +100,9 @@
                                 <div class="tab-pane" id="tab-5" role="tabpanel">
                                     <div class="">
                                         <div class="mb-4">
-                                            <p>
-                                                At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atcorrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non
-                                                provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
-                                            </p>
-                                            <p>
-                                                On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoraliz the charms of pleasure of the moment, so blinded by desire, that they cannot foresee
-                                                the pain and trouble thena bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain.
-                                            </p>
+                                        <p>{!! $data->description !!}</p>
                                         </div>
-                                        <h4 class="mb-3 mt-4">Specifications</h4>
+                                        <!-- <h4 class="mb-3 mt-4">Specifications</h4>
                                         <div class="row">
                                             <div class="col-xl-12 col-md-12">
                                                 <ul class="list-unstyled widget-spec mb-0">
@@ -129,7 +123,7 @@
                                                     </li>
                                                 </ul>
                                             </div>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                                 <div class="tab-pane" id="tab-6" role="tabpanel">
@@ -204,7 +198,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="pt-4 pb-4 ps-5 pe-5 border-top border-top">
+                    <!-- <div class="pt-4 pb-4 ps-5 pe-5 border-top border-top">
                         <div class="list-id">
                             <div class="row">
                                 <div class="col">
@@ -221,10 +215,10 @@
                             <a href="javascript:void(0);" class="btn btn-info icons"><i class="icon icon-share me-1"></i> Share Ad</a> <a href="javascript:void(0);" class="btn btn-primary icons"><i class="icon icon-heart me-1"></i> 678</a>
                             <a href="javascript:void(0);" class="btn btn-secondary icons"><i class="icon icon-printer me-1"></i> Print</a>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <!--Comments-->
-                <div class="card">
+                <div class="card d-none">
                     <div class="card-header"><h3 class="card-title">Rating And Reviews</h3></div>
                     <div class="card-body">
                         <div class="row">
@@ -319,7 +313,7 @@
                     </div>
                 </div>
                 <!--/Comments-->
-                <div class="card mb-lg-0">
+                <div class="card mb-lg-0 d-none">
                     <div class="card-header"><h3 class="card-title">Leave a reply</h3></div>
                     <div class="card-body">
                         <div>
@@ -332,157 +326,43 @@
                 </div>
             </div>
             <div class="col-lg-4">
+
                 <div class="card">
-                    <div class="card-header"><h3 class="card-title">Book a Visit</h3></div>
-                    <div class="card-body">
-                        <div class="form-group"><label class="form-label">First Name</label> <input type="text" class="form-control" placeholder="Enter Your Name" /></div>
-                        <div class="form-group"><label class="form-label">Last Name</label> <input type="text" class="form-control" placeholder="Enter Last Name" /></div>
-                        <div class="form-group"><label class="form-label">Age</label> <input type="text" class="form-control" placeholder="Enter your age" /></div>
-                        <div class="form-group"><label class="form-label">Email</label> <input type="email" class="form-control" placeholder="Enter your Email" /></div>
-                        <div class="form-group"><label class="form-label">Phone Number</label> <input type="number" class="form-control" placeholder="Enter your Phone Number" /></div>
-                        <div class="form-group"><label class="form-label">Fix Appointemnt Date</label> <input class="form-control fc-datepicker hasDatepicker" placeholder="Appointment Date" type="text" id="dp1742287988037" /></div>
-                        <div class="form-group">
-                            <label class="form-label">Time</label>
-                            <div class="row gutters-xs">
-                                <div class="col-6">
-                                    <select name="user[hour]" class="form-control select2 select2-hidden-accessible" data-select2-id="1" tabindex="-1" aria-hidden="true">
-                                        <option value="">0</option>
-                                        <option value="0">1</option>
-                                        <option value="1">2</option>
-                                        <option value="2">3</option>
-                                        <option value="3">4</option>
-                                        <option value="4">5</option>
-                                        <option value="5">6</option>
-                                        <option selected="selected" value="6" data-select2-id="3">7</option>
-                                        <option value="7">8</option>
-                                        <option value="8">9</option>
-                                        <option value="9">10</option>
-                                        <option value="10">11</option>
-                                        <option value="11">12</option>
-                                        <option value="12">13</option>
-                                        <option value="13">14</option>
-                                        <option value="14">15</option>
-                                        <option value="15">16</option>
-                                        <option value="16">17</option>
-                                        <option value="17">18</option>
-                                        <option value="18">19</option>
-                                        <option value="19">20</option>
-                                        <option value="20">21</option>
-                                        <option value="21">22</option>
-                                        <option value="22">23</option>
-                                    </select>
-                                    <span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="2" style="width: 100%;">
-                                        <span class="selection">
-                                            <span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-userhour-8n-container">
-                                                <span class="select2-selection__rendered" id="select2-userhour-8n-container" role="textbox" aria-readonly="true" title="7">7</span>
-                                                <span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span>
-                                            </span>
-                                        </span>
-                                        <span class="dropdown-wrapper" aria-hidden="true"></span>
-                                    </span>
-                                </div>
-                                <div class="col-6">
-                                    <select name="user[minute]" class="form-control select2 select2-hidden-accessible" data-select2-id="4" tabindex="-1" aria-hidden="true">
-                                        <option value="">Minutes</option>
-                                        <option value="0">00</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                        <option value="6">6</option>
-                                        <option value="7">7</option>
-                                        <option value="8">8</option>
-                                        <option value="9">9</option>
-                                        <option value="10">10</option>
-                                        <option value="11">11</option>
-                                        <option value="12">12</option>
-                                        <option value="13">13</option>
-                                        <option value="14">14</option>
-                                        <option value="15">15</option>
-                                        <option value="16">16</option>
-                                        <option value="17">17</option>
-                                        <option value="18">18</option>
-                                        <option value="19">19</option>
-                                        <option selected="selected" value="20" data-select2-id="6">20</option>
-                                        <option value="21">21</option>
-                                        <option value="22">22</option>
-                                        <option value="23">23</option>
-                                        <option value="24">24</option>
-                                        <option value="25">25</option>
-                                        <option value="26">26</option>
-                                        <option value="27">27</option>
-                                        <option value="28">28</option>
-                                        <option value="29">29</option>
-                                        <option value="30">30</option>
-                                        <option value="31">31</option>
-                                        <option value="32">32</option>
-                                        <option value="33">33</option>
-                                        <option value="34">34</option>
-                                        <option value="35">35</option>
-                                        <option value="36">36</option>
-                                        <option value="37">37</option>
-                                        <option value="38">38</option>
-                                        <option value="39">39</option>
-                                        <option value="40">40</option>
-                                        <option value="41">41</option>
-                                        <option value="42">42</option>
-                                        <option value="43">43</option>
-                                        <option value="44">44</option>
-                                        <option value="45">45</option>
-                                        <option value="46">46</option>
-                                        <option value="47">47</option>
-                                        <option value="48">48</option>
-                                        <option value="49">49</option>
-                                        <option value="50">50</option>
-                                        <option value="51">51</option>
-                                        <option value="52">52</option>
-                                        <option value="53">53</option>
-                                        <option value="54">54</option>
-                                        <option value="55">55</option>
-                                        <option value="56">56</option>
-                                        <option value="57">57</option>
-                                        <option value="58">58</option>
-                                        <option value="59">59</option>
-                                    </select>
-                                    <span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="5" style="width: 100%;">
-                                        <span class="selection">
-                                            <span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-userminute-3u-container">
-                                                <span class="select2-selection__rendered" id="select2-userminute-3u-container" role="textbox" aria-readonly="true" title="20">20</span>
-                                                <span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span>
-                                            </span>
-                                        </span>
-                                        <span class="dropdown-wrapper" aria-hidden="true"></span>
-                                    </span>
-                                </div>
+                <div class="card-header"><h3 class="card-title">Book an Appointemnt</h3></div>
+                        <form action="/save_appointment" method="post">
+                        @csrf
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label class="form-label">Name</label>
+                                <input type="text" name="name" class="form-control" placeholder="Enter Your Name" />
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Age</label>
+                                <input type="text" name="age" class="form-control" placeholder="Enter your age" />
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Email</label> 
+                                <input type="email" name="email" class="form-control" placeholder="Enter your Email" />
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Phone Number</label> 
+                                <input type="number" name="mobile" class="form-control" placeholder="Enter your Phone Number" />
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label"> Appointemnt Date</label> 
+                                <input type="date" name="date" class="form-control fc-datepicker hasDatepicker" placeholder="Appointment Date" type="text" id="dp1742287988037" />
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label"> Address</label> 
+                                <input type="text" name="address" class="form-control fc-datepicker hasDatepicker" placeholder="Addresss"  />
                             </div>
                         </div>
-                        <div class="form-group">
-                            <select name="country" id="select-countries" class="form-control form-select select2-show-search select2-hidden-accessible" data-select2-id="select-countries" tabindex="-1" aria-hidden="true">
-                                <option value="0" selected="" data-select2-id="14"> All Categories</option>
-                                <option value="1" data-select2-id="26"> Out Patient</option>
-                                <option value="11" data-select2-id="27"> General Checkup</option>
-                                <option value="2" data-select2-id="28"> Maternal-fetal medicine</option>
-                                <option value="3" data-select2-id="29"> Reproductive endocrinology and infertility</option>
-                                <option value="4" data-select2-id="30"> Female pelvic medicine and reconstructive surgery</option>
-                                <option value="5" data-select2-id="31"> Menopausal</option>
-                                <option value="6" data-select2-id="32"> Laparoscopic surgery</option>
-                                <option value="7" data-select2-id="33"> Pediatric and adolescent gynecology</option>
-                            </select>
-                            <span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="34" style="width: 100%;">
-                                <span class="selection">
-                                    <span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-select-countries-container">
-                                        <span class="select2-selection__rendered" id="select2-select-countries-container" role="textbox" aria-readonly="true" title=" All Categories"> All Categories</span>
-                                        <span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span>
-                                    </span>
-                                </span>
-                                <span class="dropdown-wrapper" aria-hidden="true"></span>
-                            </span>
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-primary">Submit</button>
                         </div>
-                    </div>
-                    <div class="card-footer">
-                        <div class=""><a href="javascript:void(0);" class="btn btn-primary">Fix Appointment</a></div>
-                    </div>
+                    </form>
+                    
+
                 </div>
             </div>
         </div>

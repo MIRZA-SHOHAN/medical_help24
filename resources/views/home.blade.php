@@ -589,7 +589,7 @@
                                     <div class="owl-item cloned" style="width: 275.25px; margin-right: 25px;">
                                         <div class="item">
                                             <div class="card">
-                                                <div class="item-card2-img"><a href="hospital-details.html"></a> 
+                                                <div class="item-card2-img"><a href="hospital.html"></a> 
                                                 <!-- <img alt="img" class="cover-image" src="{{ asset('frontend/images/0-21.jpg') }}" /> -->
                                                 <img src="{{ asset('frontend/images/0-21.jpg') }}" alt="img" class="cover-image" />
 
@@ -601,7 +601,7 @@
                                                 <div class="card-body">
                                                     <div class="item-card2">
                                                         <small class="text-muted">{{$item->type}}</small>
-                                                        <a class="text-dark" href="hospital-details.html">
+                                                        <a class="text-dark" href="hospital.html">
                                                             <h4 class="font-weight-semibold mt-1 mb-1">{{$item->title}} <i class="fas fa-check-circle text-success fs-14 ms-1"></i></h4>
                                                         </a>
                                                         <p class="text-muted fs-13 mb-1"><i class="fa fa-clock-o me-1"></i>9:00 Am - 7:00 Pm</p>
@@ -620,7 +620,7 @@
                                                 </div>
                                                 <div class="card-footer p-0 btn-appointment">
                                                     <div class="btn-group w-100">
-                                                        <a class="w-50 btn btn-outline-light p-2 border-top-0 border-bottom-0 border-start-0 border-end-0" href="hospital-details.html"><i class="fas fa-eye me-1"></i> Appointemnt</a>
+                                                        <a class="w-50 btn btn-outline-light p-2 border-top-0 border-bottom-0 border-start-0 border-end-0" href="hospital.html"><i class="fas fa-eye me-1"></i> Appointemnt</a>
                                                         <a href="tel:{{$item->m_no}}" class="w-50 btn btn-outline-light p-2 border-top-0 border-bottom-0 border-end-0 call-btn">
                                                             <div class="call-btn-1"><i class="fas fa-phone me-1"></i> Call</div>
                                                             <div class="call-number">+65 847596 82</div>
@@ -669,7 +669,7 @@
                                             <div class="col-lg-6 col-md-12 col-xl-3">
                                                 <div class="card">
                                                     <div class="item-card7-imgs">
-                                                        <a href="/doctor-details/{id}"></a> <img alt="img" class="cover-image" src="{{ asset('frontend/images/0-33.jpg') }}" />
+                                                        <a href="/doctor/{{ $item->id }}"></a> <img alt="img" class="cover-image" src="{{ asset('frontend/images/0-33.jpg') }}" />
                                                         <div class="tag-text"><span class="bg-dark tag-option">{{$item->specialities}}</span></div>
                                                     </div>
                                                     <div class="item-card2-icons d-none">
@@ -678,36 +678,16 @@
                                                     </div>
                                                     <div class="card-body">
                                                         <div class="item-card2">
-                                                            <a class="text-dark" href="/doctor-details/{id}">
+                                                            <a class="text-dark" href="/doctor/{{ $item->id }}">
                                                                 <h4 class="font-weight-semibold mt-1 mb-1">{{$item->name}}<i class="fas fa-check-circle text-success fs-14 ms-1"></i></h4>
                                                             </a>
                                                             <p class="text-muted fs-13 mb-1"><i class="fa fa-user-md text-muted me-2"></i>{{$item->degree}}</p>
-                                                            <!-- <div class="rating-stars d-inline-flex mb-1 d-none">
-                                                                <input class="rating-value star" name="rating-stars-value" readonly="readonly" type="number" value="3" />
-                                                                <div class="rating-stars-container me-2">
-                                                                    <div class="rating-star sm is--active"><i class="fa fa-star"></i></div>
-                                                                    <div class="rating-star sm is--active"><i class="fa fa-star"></i></div>
-                                                                    <div class="rating-star sm is--active"><i class="fa fa-star"></i></div>
-                                                                    <div class="rating-star sm"><i class="fa fa-star"></i></div>
-                                                                    <div class="rating-star sm"><i class="fa fa-star"></i></div>
-                                                                </div>
-                                                                3.2
-                                                            </div> -->
-                                                            <div class="mb-0 mt-0">
-                                                                <ul class="item-card-features mb-0">
-                                                                    <li class="mb-0">
-                                                                        <span class="text-muted"><i class="fa fa-map-marker me-1"></i> Hyderabad</span>
-                                                                    </li>
-                                                                    <li>
-                                                                        <span class="text-muted"><i class="fa fa-briefcase me-1"></i>2 yrs Exp</span>
-                                                                    </li>
-                                                                </ul>
-                                                            </div>
+                                                           
                                                         </div>
                                                     </div>
                                                     <div class="card-footer p-0 btn-appointment">
                                                         <div class="btn-group w-100">
-                                                            <a class="w-50 btn btn-outline-light p-2 border-top-0 border-bottom-0 border-start-0 border-end-0" href="doctor-details.html"><i class="fas fa-eye me-1"></i> Appointment</a>
+                                                            <a class="w-50 btn btn-outline-light p-2 border-top-0 border-bottom-0 border-start-0 border-end-0" href="doctor.html"><i class="fas fa-eye me-1"></i> Appointment</a>
                                                             <a class="w-50 btn btn-outline-light p-2 border-top-0 border-bottom-0 border-end-0" href="javascript:void(0);" data-bs-target="#exampleModal" data-bs-toggle="modal">
                                                                 <i class="fas fa-phone me-1"></i> Call
                                                             </a>
@@ -724,7 +704,7 @@
                                             <div class="col-lg-6 col-md-12 col-xl-3">
                                                 <div class="card">
                                                     <div class="item-card7-imgs">
-                                                        <a href="/hospital-details/{id}"></a> <img alt="img" class="cover-image" src="{{ asset('frontend/images/0-23.jpg') }}" />
+                                                        <a href="/hospital/{{ $item->id }}"></a> <img alt="img" class="cover-image" src="{{ asset('frontend/images/0-23.jpg') }}" />
                                                         <!-- <div class="tag-text"><span class="bg-dark tag-option">Hospital</span></div> -->
                                                     </div>
                                                     <!-- <div class="item-card2-icons">
@@ -733,8 +713,8 @@
                                                     </div> -->
                                                     <div class="card-body">
                                                         <div class="item-card2">
-                                                            <!-- <a class="text-dark" href="/hospital-details/{id}"> -->
-                                                                <a class="text-dark" href="/hospital-details/{{ $item->id }}">
+                                                            <!-- <a class="text-dark" href="/hospital/{id}"> -->
+                                                                <a class="text-dark" href="/hospital/{{ $item->id }}">
 
                                                                 <h4 class="font-weight-semibold mt-1 mb-1">{{$item->title}}<i class="fas fa-check-circle text-success fs-14 ms-1"></i></h4>
                                                             </a>
@@ -764,7 +744,7 @@
                                                     </div>
                                                     <div class="card-footer p-0 btn-appointment">
                                                         <div class="btn-group w-100">
-                                                            <a class="w-50 btn btn-outline-light p-2 border-top-0 border-bottom-0 border-start-0 border-end-0" href="hospital-details.html"><i class="fas fa-eye me-1"></i> Appointemnt</a>
+                                                            <a class="w-50 btn btn-outline-light p-2 border-top-0 border-bottom-0 border-start-0 border-end-0" href="hospital.html"><i class="fas fa-eye me-1"></i> Appointemnt</a>
                                                             <a href="tel:+8801792017302" class="w-50 btn btn-outline-light p-2 border-top-0 border-bottom-0 border-end-0 call-btn">
                                                                 <div class="call-btn-1"><i class="fas fa-phone me-1"></i> Call</div>
                                                                 <div class="call-number">+65 847596 82</div>
@@ -783,7 +763,7 @@
                                             <div class="col-lg-6 col-md-12 col-xl-3">
                                                 <div class="card">
                                                     <div class="item-card7-imgs">
-                                                        <a href="fitness-details.html"></a> <img alt="img" class="cover-image" src="{{ asset('frontend/images/0-26.jpg') }}" />
+                                                        <a href="/hospital/{{ $item->id }}"></a> <img alt="img" class="cover-image" src="{{ asset('frontend/images/0-26.jpg') }}" />
                                                         <div class="tag-text"><span class="bg-dark tag-option">Fitness Center</span></div>
                                                     </div>
                                                     <div class="item-card2-icons">
@@ -792,7 +772,7 @@
                                                     </div>
                                                     <div class="card-body">
                                                         <div class="item-card2">
-                                                            <a class="text-dark" href="fitness-details.html">
+                                                            <a class="text-dark" href="/hospital/{{ $item->id }}">
                                                                 <h4 class="font-weight-semibold mt-1 mb-1">{{$item->title}}<i class="fas fa-check-circle text-success fs-14 ms-1"></i></h4>
                                                             </a>
                                                             <p class="text-muted fs-13 mb-1"><i class="fa fa-map-marker me-1"></i> {{$item->address}}</p>
@@ -811,7 +791,7 @@
                                                     </div>
                                                     <div class="card-footer p-0 btn-appointment">
                                                         <div class="btn-group w-100">
-                                                            <a class="w-50 btn btn-outline-light p-2 border-top-0 border-bottom-0 border-start-0 border-end-0" href="hospital-details.html"><i class="fas fa-eye me-1"></i> Appointemnt</a>
+                                                            <a class="w-50 btn btn-outline-light p-2 border-top-0 border-bottom-0 border-start-0 border-end-0" href="hospital.html"><i class="fas fa-eye me-1"></i> Appointemnt</a>
                                                             <a href="javascript:void(0);" class="w-50 btn btn-outline-light p-2 border-top-0 border-bottom-0 border-end-0 call-btn">
                                                                 <div class="call-btn-1"><i class="fas fa-phone me-1"></i> Call</div>
                                                                 <div class="call-number">+65 847596 82</div>
@@ -830,13 +810,13 @@
                                             <div class="col-lg-6 col-md-12 col-xl-3">
                                                 <div class="card">
                                                     <div class="item-card7-imgs">
-                                                        <a href="hospital-details.html"></a> <img alt="img" class="cover-image" src="{{ asset('frontend/images/0-5.jpg') }}" />
+                                                        <a href="/hospital/{{ $item->id }}"></a> <img alt="img" class="cover-image" src="{{ asset('frontend/images/0-5.jpg') }}" />
                                                         <div class="tag-text"><span class="bg-dark tag-option">Clinic</span></div>
                                                     </div>
                                                     
                                                     <div class="card-body">
                                                         <div class="item-card2">
-                                                            <a class="text-dark" href="hospital-details.html">
+                                                            <a class="text-dark" href="/hospital/{{ $item->id }}">
                                                                 <h4 class="font-weight-semibold mt-1 mb-1">{{$item->title}}<i class="fas fa-check-circle text-success fs-14 ms-1"></i></h4>
                                                             </a>
                                                             <p class="text-muted fs-13 mb-1"><i class="fa fa-map-marker me-1"></i>{{$item->address}}</p>
@@ -851,7 +831,7 @@
                                                     </div>
                                                     <div class="card-footer p-0 btn-appointment">
                                                         <div class="btn-group w-100">
-                                                            <a class="w-50 btn btn-outline-light p-2 border-top-0 border-bottom-0 border-start-0 border-end-0" href="hospital-details.html"><i class="fas fa-eye me-1"></i> Appointemnt</a>
+                                                            <a class="w-50 btn btn-outline-light p-2 border-top-0 border-bottom-0 border-start-0 border-end-0" href="hospital.html"><i class="fas fa-eye me-1"></i> Appointemnt</a>
                                                             <a href="javascript:void(0);" class="w-50 btn btn-outline-light p-2 border-top-0 border-bottom-0 border-end-0 call-btn">
                                                                 <div class="call-btn-1"><i class="fas fa-phone me-1"></i> Call</div>
                                                                 <div class="call-number">+65 847596 82</div>
@@ -869,7 +849,7 @@
                                             <div class="col-lg-6 col-md-12 col-xl-3">
                                                 <div class="card">
                                                     <div class="item-card7-imgs">
-                                                        <a href="bloodbank-details.html"></a> <img alt="img" class="cover-image" src="{{ asset('frontend/images/0-16.jpg') }}" />
+                                                        <a href="/hospital/{{ $item->id }}"></a> <img alt="img" class="cover-image" src="{{ asset('frontend/images/0-16.jpg') }}" />
                                                         <div class="tag-text"><span class="bg-dark tag-option">BloodBank</span></div>
                                                     </div>
                                                     <!-- <div class="item-card2-icons">
@@ -878,7 +858,7 @@
                                                     </div> -->
                                                     <div class="card-body">
                                                         <div class="item-card2">
-                                                            <a class="text-dark" href="bloodbank-details.html">
+                                                            <a class="text-dark" href="/hospital/{{ $item->id }}">
                                                                 <h4 class="font-weight-semibold mt-1 mb-1">{{$item->title}}<i class="fas fa-check-circle text-success fs-14 ms-1"></i></h4>
                                                             </a>
                                                             <p class="text-muted fs-13 mb-1"><i class="fa fa-map-marker me-1"></i>{{$item->address}}</p>
@@ -895,7 +875,7 @@
                                                     </div>
                                                     <div class="card-footer p-0 btn-appointment">
                                                         <div class="btn-group w-100">
-                                                            <a class="w-50 btn btn-outline-light p-2 border-top-0 border-bottom-0 border-start-0 border-end-0" href="hospital-details.html"><i class="fas fa-eye me-1"></i> Appointment</a>
+                                                            <a class="w-50 btn btn-outline-light p-2 border-top-0 border-bottom-0 border-start-0 border-end-0" href="hospital.html"><i class="fas fa-eye me-1"></i> Appointment</a>
                                                             <a href="tel:{{$item->mobile}}" class="w-50 btn btn-outline-light p-2 border-top-0 border-bottom-0 border-end-0 call-btn">
                                                                 <div class="call-btn-1"><i class="fas fa-phone me-1"></i> Call</div>
                                                                 <div class="call-number">+65 847596 82</div>
@@ -1537,7 +1517,7 @@
                                                         <a href="javascript:void(0);"><i class="fa fa-comment-o text-muted me-2"></i>4 Comments</a>
                                                     </div>
                                                 </div>
-                                                <a href="blog-details.html" class="text-dark"><h4 class="font-weight-semibold">Et harum quidem rerum facilis est</h4></a>
+                                                <a href="blog.html" class="text-dark"><h4 class="font-weight-semibold">Et harum quidem rerum facilis est</h4></a>
                                                 <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum</p>
                                                 <div class="d-flex align-items-center pt-2 mt-auto">
                                                     <img  src="{{ asset('frontend/images/12.jpg') }}" class="avatar brround avatar-md me-3" alt="avatar-img" />
@@ -1562,7 +1542,7 @@
                                                         <a href="javascript:void(0);"><i class="fa fa-comment-o text-muted me-2"></i>2 Comments</a>
                                                     </div>
                                                 </div>
-                                                <a href="blog-details.html" class="text-dark"><h4 class="font-weight-semibold">Sed ut perspiciatis unde omnis iste</h4></a>
+                                                <a href="blog.html" class="text-dark"><h4 class="font-weight-semibold">Sed ut perspiciatis unde omnis iste</h4></a>
                                                 <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum</p>
                                                 <div class="d-flex align-items-center pt-2 mt-auto">
                                                     <img  src="{{ asset('frontend/images/5.jpg') }}" class="avatar brround avatar-md me-3" alt="avatar-img" />
@@ -1587,7 +1567,7 @@
                                                         <a href="javascript:void(0);"><i class="fa fa-comment-o text-muted me-2"></i>8 Comments</a>
                                                     </div>
                                                 </div>
-                                                <a href="blog-details.html" class="text-dark"><h4 class="font-weight-semibold">At vero eos et accusamus et iusto</h4></a>
+                                                <a href="blog.html" class="text-dark"><h4 class="font-weight-semibold">At vero eos et accusamus et iusto</h4></a>
                                                 <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum</p>
                                                 <div class="d-flex align-items-center pt-2 mt-auto">
                                                     <img src="https://www.spruko.com/demo/medz/Medz/assets/images/users/male/6.jpg') }}" class="avatar brround avatar-md me-3" alt="avatar-img" />
@@ -1612,7 +1592,7 @@
                                                         <a href="javascript:void(0);"><i class="fa fa-comment-o text-muted me-2"></i>4 Comments</a>
                                                     </div>
                                                 </div>
-                                                <a href="blog-details.html" class="text-dark"><h4>Duis aute irure reprehenderit</h4></a>
+                                                <a href="blog.html" class="text-dark"><h4>Duis aute irure reprehenderit</h4></a>
                                                 <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum</p>
                                                 <div class="d-flex align-items-center pt-2 mt-auto">
                                                     <img  src="{{ asset('frontend/images/5.jpg') }}" class="avatar brround avatar-md me-3" alt="avatar-img" />
@@ -1637,7 +1617,7 @@
                                                         <a href="javascript:void(0);"><i class="fa fa-comment-o text-muted me-2"></i>2 Comments</a>
                                                     </div>
                                                 </div>
-                                                <a href="blog-details.html" class="text-dark"><h4>Nam libero tempore soluta</h4></a>
+                                                <a href="blog.html" class="text-dark"><h4>Nam libero tempore soluta</h4></a>
                                                 <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum</p>
                                                 <div class="d-flex align-items-center pt-2 mt-auto">
                                                     <img  src="{{ asset('frontend/images/7.jpg') }}" class="avatar brround avatar-md me-3" alt="avatar-img" />
@@ -1662,7 +1642,7 @@
                                                         <a href="javascript:void(0);"><i class="fa fa-comment-o text-muted me-2"></i>8 Comments</a>
                                                     </div>
                                                 </div>
-                                                <a href="blog-details.html" class="text-dark"><h4>At vero eos et accusamus et iusto</h4></a>
+                                                <a href="blog.html" class="text-dark"><h4>At vero eos et accusamus et iusto</h4></a>
                                                 <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum</p>
                                                 <div class="d-flex align-items-center pt-2 mt-auto">
                                                     <img  src="{{ asset('frontend/images/12.jpg') }}" class="avatar brround avatar-md me-3" alt="avatar-img" />
@@ -1687,7 +1667,7 @@
                                                         <a href="javascript:void(0);"><i class="fa fa-comment-o text-muted me-2"></i>4 Comments</a>
                                                     </div>
                                                 </div>
-                                                <a href="blog-details.html" class="text-dark"><h4 class="font-weight-semibold">Et harum quidem rerum facilis est</h4></a>
+                                                <a href="blog.html" class="text-dark"><h4 class="font-weight-semibold">Et harum quidem rerum facilis est</h4></a>
                                                 <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum</p>
                                                 <div class="d-flex align-items-center pt-2 mt-auto">
                                                     <img src="https://www.spruko.com/demo/medz/Medz/assets/images/users/male/12.jpg') }}" class="avatar brround avatar-md me-3" alt="avatar-img" />
@@ -1712,7 +1692,7 @@
                                                         <a href="javascript:void(0);"><i class="fa fa-comment-o text-muted me-2"></i>2 Comments</a>
                                                     </div>
                                                 </div>
-                                                <a href="blog-details.html" class="text-dark"><h4 class="font-weight-semibold">Sed ut perspiciatis unde omnis iste</h4></a>
+                                                <a href="blog.html" class="text-dark"><h4 class="font-weight-semibold">Sed ut perspiciatis unde omnis iste</h4></a>
                                                 <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum</p>
                                                 <div class="d-flex align-items-center pt-2 mt-auto">
                                                     <img  src="{{ asset('frontend/images/5.jpg') }}" class="avatar brround avatar-md me-3" alt="avatar-img" />
@@ -1737,7 +1717,7 @@
                                                         <a href="javascript:void(0);"><i class="fa fa-comment-o text-muted me-2"></i>8 Comments</a>
                                                     </div>
                                                 </div>
-                                                <a href="blog-details.html" class="text-dark"><h4 class="font-weight-semibold">At vero eos et accusamus et iusto</h4></a>
+                                                <a href="blog.html" class="text-dark"><h4 class="font-weight-semibold">At vero eos et accusamus et iusto</h4></a>
                                                 <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum</p>
                                                 <div class="d-flex align-items-center pt-2 mt-auto">
                                                     <img  src="{{ asset('frontend/images/6.jpg') }}" class="avatar brround avatar-md me-3" alt="avatar-img" />
@@ -1762,7 +1742,7 @@
                                                         <a href="javascript:void(0);"><i class="fa fa-comment-o text-muted me-2"></i>4 Comments</a>
                                                     </div>
                                                 </div>
-                                                <a href="blog-details.html" class="text-dark"><h4>Duis aute irure reprehenderit</h4></a>
+                                                <a href="blog.html" class="text-dark"><h4>Duis aute irure reprehenderit</h4></a>
                                                 <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum</p>
                                                 <div class="d-flex align-items-center pt-2 mt-auto">
                                                     <img  src="{{ asset('frontend/images/5.jpg') }}" class="avatar brround avatar-md me-3" alt="avatar-img" />
@@ -1787,7 +1767,7 @@
                                                         <a href="javascript:void(0);"><i class="fa fa-comment-o text-muted me-2"></i>2 Comments</a>
                                                     </div>
                                                 </div>
-                                                <a href="blog-details.html" class="text-dark"><h4>Nam libero tempore soluta</h4></a>
+                                                <a href="blog.html" class="text-dark"><h4>Nam libero tempore soluta</h4></a>
                                                 <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum</p>
                                                 <div class="d-flex align-items-center pt-2 mt-auto">
                                                     <img  src="{{ asset('frontend/images/7.jpg') }}" class="avatar brround avatar-md me-3" alt="avatar-img" />
@@ -1812,7 +1792,7 @@
                                                         <a href="javascript:void(0);"><i class="fa fa-comment-o text-muted me-2"></i>8 Comments</a>
                                                     </div>
                                                 </div>
-                                                <a href="blog-details.html" class="text-dark"><h4>At vero eos et accusamus et iusto</h4></a>
+                                                <a href="blog.html" class="text-dark"><h4>At vero eos et accusamus et iusto</h4></a>
                                                 <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum</p>
                                                 <div class="d-flex align-items-center pt-2 mt-auto">
                                                     <img  src="{{ asset('frontend/images/12.jpg') }}" class="avatar brround avatar-md me-3" alt="avatar-img" />

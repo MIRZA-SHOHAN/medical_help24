@@ -12,6 +12,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\PricingController;
 use App\Http\Controllers\EmailSubscriptionController;
 use App\Http\Controllers\TeamMemberController;
+use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\HospitalController;
 use App\Http\Controllers\ZoneController;
@@ -34,14 +35,23 @@ Route::get('/about', [HomeController::class, 'about']);
 Route::get('/post-add', [HomeController::class, 'post_add']);
 Route::post('/save_doctor', [DoctorController::class, 'store']);
 Route::get('/doctor-details/{id}', [HomeController::class, 'doctor_details']);
-Route::get('/hospital-details/{id}', [HomeController::class, 'hospital_detail']);
+Route::get('/hospital/{id}', [HomeController::class, 'hospital']);
+Route::get('/clinic/{id}', [HomeController::class, 'hospital']);
+Route::get('/fitness-center/{id}', [HomeController::class, 'hospital']);
+Route::get('/blood-bank/{id}', [HomeController::class, 'hospital']);
+
+// Route::get('/hospital-details/{id}/{type}', [HomeController::class, 'hospital_detail']);
+
 Route::get('/page-list/{id}', [HomeController::class, 'page_list']);
 
 Route::get('/service', [HomeController::class, 'service']);
 Route::get('/doctors', [HomeController::class, 'doctor']);
 // Route::get('/doctor-details/{id}', [TeamMemberController::class, 'show']);
 Route::get('/appointment/{id?}', [TeamMemberController::class, 'appointment']);
-Route::post('/save_appointment', [TeamMemberController::class, 'appointment_store']);
+// Route::post('/save_appointment', [TeamMemberController::class, 'appointment_store']);
+Route::post('/save_appointment', [AppointmentController::class, 'store_appointment']);
+
+
 
 Route::get('/gallery', [HomeController::class, 'gallery']);
 Route::get('/contact', [HomeController::class, 'contact']);
@@ -259,6 +269,16 @@ Route::middleware([admin::class])->group(function () {
     Route::get('/edit-zone/{id}', [ZoneController::class, 'edit']);
     Route::post('/update_zone', [ZoneController::class, 'update']);
     Route::get('/delete-zone/{id}', [ZoneController::class, 'destroy']);
+
+    
+    /*appointment*/
+    Route::get('/appointments', [AppointmentController::class, 'index']);
+    Route::get('/add-appointment', [AppointmentController::class, 'create']);
+    // Route::post('/save_appointment', [AppointmentController::class, 'store']);
+    Route::get('/edit-appointment/{id}', [AppointmentController::class, 'edit']);
+    Route::get('/case-study-details/{id}', [AppointmentController::class, 'show']);
+    Route::post('/update_appointment', [AppointmentController::class, 'update']);
+    Route::get('/delete-appointment/{id}', [AppointmentController::class, 'destroy']);
 
 });
 
