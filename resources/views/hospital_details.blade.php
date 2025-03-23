@@ -138,6 +138,23 @@
                 
                 <!--/Comments-->
                 <div class="card mb-lg-0">
+                    <div class="card-header"><h3 class="card-title">Our Doctors</h3></div>
+                    <div class="card-body">
+                        <div>
+                           <div class="ro">
+                            <div class="col-md-6">
+                                Doctor 1
+                            </div> 
+                            <div class="col-md-6">
+                                Doctor 2
+                            </div>
+                           </div>
+                        
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-lg-0">
                     <div class="card-header"><h3 class="card-title">Leave a reply</h3></div>
                     <div class="card-body">
                         <div>
@@ -148,6 +165,7 @@
                         </div>
                     </div>
                 </div>
+
             </div>
             <!--Right Side Content-->
             <div class="col-xl-4 col-lg-4 col-md-12">
