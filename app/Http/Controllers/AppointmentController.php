@@ -19,7 +19,7 @@ class AppointmentController extends Controller
       $settings = DB::table('settings')->where('id', 1)->first();
       if($settings->active!='on'){return view('under_construction');} 
 
-        $data = Doctor::orderBy('id', 'asc')->get();
+        $data = Appointment::orderBy('id', 'asc')->get();
 
         // $data = Doctor::orderBy('id', 'asc')
         // ->leftJoin('specialities', 'team_members.speciality_id', '=', 'specialities.id')
@@ -27,7 +27,7 @@ class AppointmentController extends Controller
         // ->get();
 
 
-        return view('admin.doctor.index', ['data'=>$data]);        
+        return view('admin.appointment.index', ['data'=>$data]);        
     }
 
 
@@ -36,21 +36,14 @@ class AppointmentController extends Controller
         return view('admin.doctor.create');
       }
 
-      public function store_appointment(Request $request)
+      public function store(Request $request)
       {      
         // dd($request);  
 
         $data = new Appointment;
         $data->name = $request->name;
-        $data->age = $request->age;
-        $data->email = $request->email;
         $data->mobile = $request->mobile;
         $data->date = $request->date;
-        $data->address = $request->address;
-
-        if($request->file('image')!= null){
-            $data->image = $request->file('image')->store('images');
-        } 
         $data->active = $request->active;
         $data->created_by = session('user.id');
         $data->updated_by = '';

@@ -84,7 +84,7 @@
                     <div class="mb-4">
                         <p>{!! $data->description !!}</p>
                     </div>
-                        <h4 class="mb-2 mt-5">Specifications</h4>
+                        <!-- <h4 class="mb-2 mt-5">Specifications</h4>
                         <div class="row">
                             <div class="col-xl-12 col-md-12">
                                 <div class="table-responsive">
@@ -114,7 +114,7 @@
                                     </table>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="pt-4 pb-4 ps-5 pe-5 border-top border-top d-none">
                         <div class="list-id ">
@@ -135,43 +135,73 @@
                     </div> -->
                 </div>
                 <!--Comments-->
-                
-                <!--/Comments-->
-                <div class="card mb-lg-0">
-                    <div class="card-header"><h3 class="card-title">Our Doctors</h3></div>
-                    <div class="card-body">
-                        <div>
-                           <div class="ro">
-                            <div class="col-md-6">
-                                Doctor 1
-                            </div> 
-                            <div class="col-md-6">
-                                Doctor 2
-                            </div>
-                           </div>
-                        
-                        </div>
-                    </div>
-                </div>
 
-                <div class="card mb-lg-0">
-                    <div class="card-header"><h3 class="card-title">Leave a reply</h3></div>
-                    <div class="card-body">
-                        <div>
-                            <div class="form-group"><input type="text" class="form-control" id="name1" placeholder="Your Name" /></div>
-                            <div class="form-group"><input type="email" class="form-control" id="email" placeholder="Email Address" /></div>
-                            <div class="form-group"><textarea class="form-control" name="example-textarea-input" rows="6" placeholder="Comment"></textarea></div>
-                            <a href="javascript:void(0);" class="btn btn-primary">Send Reply</a>
+
+                
+                <div class="section-title center-block text-center">
+                    <h2 class="card-title">Doctors of {{$data->title}}</h2>
+                    
+                </div>
+                <div class="items-gallery">
+                    <div class="items-blog-tab text-center">
+                        
+                        <div class="tab-content list-container closed" style="height: 380px; overflow: hidden;">
+                            <div class="tab-pane active" id="tab-1" role="tabpanel">
+                                <div class="row">
+                                    @foreach ($doctor_list as $item)
+
+                                        <div class="col-md-6">
+                                            <div class="card">
+                                                <div class="item-card7-imgs">
+                                                    <a href="/doctor/{{ $item->id }}"></a> <img alt="img" class="cover-image" src="{{ asset('frontend/images/0-33.jpg') }}" />
+                                                    <div class="tag-text"><span class="bg-dark tag-option">{{$item->specialities}}</span></div>
+                                                </div>
+                                                
+                                                <div class="card-body">
+                                                    <div class="item-card2">
+                                                        <a class="text-dark" href="/doctor/{{ $item->id }}">
+                                                            <h4 class="font-weight-semibold mt-1 mb-1">{{$item->name}}<i class="fas fa-check-circle text-success fs-14 ms-1"></i></h4>
+                                                        </a>
+                                                        <p class="text-muted fs-13 mb-1"><i class="fa fa-user-md text-muted me-2"></i>{{$item->degree}}</p>
+                                                        
+                                                    </div>
+                                                </div>
+                                                <div class="card-footer p-0 btn-appointment">
+                                                        <div class="btn-group w-100">
+                                                        <a class="w-50 btn btn-outline-light p-2 border-top-0 border-bottom-0 border-start-0 border-end-0 appointment-btn" 
+                                                            href="javascript:void(0);" data-doctor-id="{{ $item->id }}" data-doctor-name="{{ $item->name }}">
+                                                            <i class="fas fa-eye me-1"></i> Appointment
+                                                        </a>
+
+
+                                                            <a href="tel:+8801792017302" class="w-50 btn btn-outline-light p-2 border-top-0 border-bottom-0 border-end-0 call-btn">
+                                                                <div class="call-btn-1"><i class="fas fa-phone me-1"></i> Call</div>
+                                                                <div class="call-number">+65 847596 82</div>
+                                                                
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                    @endforeach  
+                                </div>
+                            </div>
+                            
+                            
                         </div>
+                        <!-- <div class="showmore-button"><div class="showmore-button-inner more">Show more</div></div> -->
                     </div>
                 </div>
+              
+
+                
 
             </div>
             <!--Right Side Content-->
             <div class="col-xl-4 col-lg-4 col-md-12">
                 <div class="card">
-                    <div class="card-header"><h3 class="card-title">Posted By</h3></div>
-                    <div class="card-body item-user">
+                    <!-- <div class="card-header"><h3 class="card-title">Posted By</h3></div> -->
+                    <!-- <div class="card-body item-user">
                         <div class="profile-pic mb-0">
                             <img src="../assets/images/users/female/13.jpg" class="brround avatar-xxl" alt="user" />
                             <div>
@@ -179,7 +209,7 @@
                                 <h6 class="mt-2 mb-0"><a href="userprofile.html" class="btn btn-primary btn-sm">See All Ads</a></h6>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="card-body item-user">
                         <h4 class="mb-4">Contact Info</h4>
                         <div>
@@ -1254,6 +1284,21 @@
                     </div>
                 </div>
                 
+                
+                <div class="card">
+                    <div class="card mb-lg-0">
+                        <div class="card-header"><h3 class="card-title">Leave a reply</h3></div>
+                        <div class="card-body">
+                            <div>
+                                <div class="form-group"><input type="text" class="form-control" id="name1" placeholder="Your Name" /></div>
+                                <div class="form-group"><input type="email" class="form-control" id="email" placeholder="Email Address" /></div>
+                                <div class="form-group"><input type="number" class="form-control" id="number" placeholder="Enter phone no" /></div>
+                                <div class="form-group"><textarea class="form-control" name="example-textarea-input" rows="6" placeholder="Comment"></textarea></div>
+                                <a href="javascript:void(0);" class="btn btn-primary">Send Reply</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="card">
                     <div class="card-header"><h3 class="card-title">Latest Posts</h3></div>
                     <div class="card-body pb-3">
@@ -1333,6 +1378,8 @@
         </div>
     </div>
 </section>
+<!--Section-->
+
 
 
 @endsection

@@ -337,14 +337,6 @@
                                 <input type="text" name="name" class="form-control" placeholder="Enter Your Name" />
                             </div>
                             <div class="form-group">
-                                <label class="form-label">Age</label>
-                                <input type="text" name="age" class="form-control" placeholder="Enter your age" />
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Email</label> 
-                                <input type="email" name="email" class="form-control" placeholder="Enter your Email" />
-                            </div>
-                            <div class="form-group">
                                 <label class="form-label">Phone Number</label> 
                                 <input type="number" name="mobile" class="form-control" placeholder="Enter your Phone Number" />
                             </div>
@@ -352,14 +344,12 @@
                                 <label class="form-label"> Appointemnt Date</label> 
                                 <input type="date" name="date" class="form-control fc-datepicker hasDatepicker" placeholder="Appointment Date" type="text" id="dp1742287988037" />
                             </div>
-                            <div class="form-group">
-                                <label class="form-label"> Address</label> 
-                                <input type="text" name="address" class="form-control fc-datepicker hasDatepicker" placeholder="Addresss"  />
-                            </div>
+                            
                         </div>
                         <div class="card-footer">
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </div>
+
                     </form>
                     
 

@@ -126,13 +126,12 @@
                                                     <div class="card-body">
                                                         <div class="item-card9">
                                                             <a class="text-dark" href="hospital-details.html">
-                                                                <h4 class="font-weight-bold mt-1 mb-2">{{$item->title}}<i class="fas fa-check-circle text-success fs-14 ms-1"></i></h4>
+                                                                <h4 class="font-weight-bold mt-1 mb-2">{{$item->title}}<i class="ion-checkmark-circled text-success fs-14 ms-1"></i></h4>
                                                             </a>
                                                             <div class="item-card9-desc mb-2 mt-1">
                                                                 <span class="me-4 d-inline-block"><i class="fa fa-map-marker text-muted me-1"></i> {{$item->address}}</span>
-                                                                
-                                                                 <span class="me-4"><i class="fa fa-user-md text-muted me-1"></i> 30 Doctors</span>
-                                                                <span class="me-4"><i class="fas fa-phone text-muted me-1"></i>{{$item->m_no}}</span>
+                                                                <span class="me-4"><i class="fe fe-briefcase text-muted me-1"></i> 20 Specialities</span> <span class="me-4"><i class="fa fa-user-md text-muted me-1"></i> 30 Doctors</span>
+                                                                <span class="me-4"><i class="fe fe-phone text-muted me-1"></i>{{$item->mobile}}</span>
                                                             </div>
                                                             <p class="mb-0 fs-14 mt-1">
                                                                 <span class=""><i class="fa fa-location-arrow text-muted me-1"></i></span> 195 Prince St.Windermere, FL 34786
@@ -142,10 +141,10 @@
                                                     <div class="card-footer p-0">
                                                         <div class="item-card9-footer btn-appointment">
                                                             <div class="btn-group w-100">
-                                                                <a href="/hospital/{{ $item->id }}" class="btn btn-outline-light w-34 p-2 border-top-0 border-end-0 border-bottom-0"><i class="fas fa-eye me-1"></i>View Profile</a>
+                                                                <a href="javascript:void(0);" class="btn btn-outline-light w-34 p-2 border-top-0 border-end-0 border-bottom-0"><i class="fe fe-eye me-1 d-inline-block"></i>View Profile</a>
                                                                 <a href="javascript:void(0);" class="btn btn-outline-light w-33 p-2 border-top-0 border-end-0 border-bottom-0"><i class="fa fa-user-md me-1"></i>Doctorslist</a>
                                                                 <a class="btn btn-outline-light w-34 p-2 border-top-0 border-end-0 border-bottom-0 call-btn">
-                                                                    <div class="call-btn-1"><i class="fas fa-phone me-1"></i> Call</div>
+                                                                    <div class="call-btn-1"><i class="fe fe-phone me-1"></i> Call</div>
                                                                     <div class="call-number">+65 847596 82</div>
                                                                 </a>
                                                             </div>

@@ -35,6 +35,13 @@ Route::get('/about', [HomeController::class, 'about']);
 Route::get('/post-add', [HomeController::class, 'post_add']);
 Route::post('/save_doctor', [DoctorController::class, 'store']);
 Route::get('/doctor/{id}', [HomeController::class, 'doctor_details']);
+// Route::get('/doctor-list}', [HomeController::class, 'doctor_list']);
+// Route::get('/doctors/hospital/{hospital_id}', [HomeController::class, 'doctor_list']);
+
+
+Route::post('/save_appointment', [AppointmentController::class, 'store']);
+
+
 Route::get('/hospital/{id}', [HomeController::class, 'hospital']);
 Route::get('/clinic/{id}', [HomeController::class, 'hospital']);
 Route::get('/fitness-center/{id}', [HomeController::class, 'hospital']);
@@ -42,14 +49,15 @@ Route::get('/blood-bank/{id}', [HomeController::class, 'hospital']);
 
 // Route::get('/hospital-details/{id}/{type}', [HomeController::class, 'hospital_detail']);
 
-Route::get('/page-list/{id}', [HomeController::class, 'page_list']);
+// Route::get('/hospitals/{id}', [HomeController::class, 'page_list']);
+Route::get('/hospitals-list', [HomeController::class, 'page_list']);
 
 Route::get('/service', [HomeController::class, 'service']);
 Route::get('/doctors', [HomeController::class, 'doctor']);
 // Route::get('/doctor-details/{id}', [TeamMemberController::class, 'show']);
 Route::get('/appointment/{id?}', [TeamMemberController::class, 'appointment']);
 // Route::post('/save_appointment', [TeamMemberController::class, 'appointment_store']);
-Route::post('/save_appointment', [AppointmentController::class, 'store_appointment']);
+// Route::post('/save_appointment', [AppointmentController::class, 'store_appointment']);
 
 
 
@@ -233,7 +241,6 @@ Route::middleware([admin::class])->group(function () {
     Route::get('/edit-team-member/{id}', [TeamMemberController::class, 'edit']);
     Route::post('/update_team_member', [TeamMemberController::class, 'update']);
     Route::get('/delete-instructor/{id}', [TeamMemberController::class, 'destroy']);
-    Route::get('/appointments', [TeamMemberController::class, 'appointment_list']);
 
     /*hospital*/
     Route::get('/hospitals', [HospitalController::class, 'index']);
@@ -279,6 +286,8 @@ Route::middleware([admin::class])->group(function () {
     Route::get('/case-study-details/{id}', [AppointmentController::class, 'show']);
     Route::post('/update_appointment', [AppointmentController::class, 'update']);
     Route::get('/delete-appointment/{id}', [AppointmentController::class, 'destroy']);
+    // Route::get('/appointment_list', [TeamMemberController::class, 'appointment_list']);
+
 
 });
 

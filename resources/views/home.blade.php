@@ -459,7 +459,7 @@
                             <div class="card bg-card-light bg-primary-card bg-white">
                                 <div class="card-body">
                                     <div class="cat-item text-center">
-                                        <a href="/page-list/{id}"></a>
+                                        <a href="/hospitals-list"></a>
                                         <div class="cat-icon bg-primary-transparent brround text-primary"><i class="fa fa-hospital-o"></i></div>
                                         <div class="cat-desc">
 
@@ -687,12 +687,20 @@
                                                     </div>
                                                     <div class="card-footer p-0 btn-appointment">
                                                         <div class="btn-group w-100">
-                                                            <a class="w-50 btn btn-outline-light p-2 border-top-0 border-bottom-0 border-start-0 border-end-0" href="doctor.html"><i class="fas fa-eye me-1"></i> Appointment</a>
-                                                            <a class="w-50 btn btn-outline-light p-2 border-top-0 border-bottom-0 border-end-0" href="javascript:void(0);" data-bs-target="#exampleModal" data-bs-toggle="modal">
-                                                                <i class="fas fa-phone me-1"></i> Call
+                                                        <a class="w-50 btn btn-outline-light p-2 border-top-0 border-bottom-0 border-start-0 border-end-0 appointment-btn" 
+                                                            href="javascript:void(0);" data-doctor-id="{{ $item->id }}" data-doctor-name="{{ $item->name }}">
+                                                            <i class="fas fa-eye me-1"></i> Appointment
+                                                        </a>
+
+
+                                                            <a href="tel:+8801792017302" class="w-50 btn btn-outline-light p-2 border-top-0 border-bottom-0 border-end-0 call-btn">
+                                                                <div class="call-btn-1"><i class="fas fa-phone me-1"></i> Call</div>
+                                                                <div class="call-number">+65 847596 82</div>
+                                                                
                                                             </a>
                                                         </div>
                                                     </div>
+
                                                 </div>
                                             </div>
                                         @endforeach  
@@ -744,7 +752,7 @@
                                                     </div>
                                                     <div class="card-footer p-0 btn-appointment">
                                                         <div class="btn-group w-100">
-                                                            <a class="w-50 btn btn-outline-light p-2 border-top-0 border-bottom-0 border-start-0 border-end-0" href="hospital.html"><i class="fas fa-eye me-1"></i> Appointemnt</a>
+                                                            <a class="w-50 btn btn-outline-light p-2 border-top-0 border-bottom-0 border-start-0 border-end-0" href="/hospital/{{ $item->id }}"><i class="fas fa-eye me-1"></i> View Details</a>
                                                             <a href="tel:+8801792017302" class="w-50 btn btn-outline-light p-2 border-top-0 border-bottom-0 border-end-0 call-btn">
                                                                 <div class="call-btn-1"><i class="fas fa-phone me-1"></i> Call</div>
                                                                 <div class="call-number">+65 847596 82</div>
@@ -1837,5 +1845,8 @@
                 </div>
             </section>
             <!--/Section-->
+
+
+
 
 @endsection

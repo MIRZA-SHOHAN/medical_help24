@@ -406,7 +406,7 @@ if($settings->active != 'on'){  ?>
                                         <li aria-haspopup="true">
                                             <span class="horizontalMenu-click">
                                                 <!-- <i class="horizontalMenu-arrow fa fa-angle-down"></i> -->
-                                            </span> <a class="active" href="javascript:void(0);">Home 
+                                            </span> <a class="active" href="/">Home 
                                                 <!-- <span class="fas fa-chevron-down"></span> -->
                                             </a>
                                             <ul class="sub-menu d-none">
@@ -421,10 +421,10 @@ if($settings->active != 'on'){  ?>
                                                 <li aria-haspopup="true"><a href="index-banner.html">Home Banner</a></li>
                                             </ul>
                                         </li>
-                                        <li aria-haspopup="true"><a href="about.html">About Us</a></li>
-                                        <li aria-haspopup="true"><a href="widgets.html">Widgets</a></li>
+                                        <li aria-haspopup="true"><a href="/about">About Us</a></li>
+                                        <li aria-haspopup="true"><a href="/doctors">Doctors</a></li>
                                         
-                                        <li aria-haspopup="true">
+                                        <!-- <li aria-haspopup="true">
                                             <span class="horizontalMenu-click"><i class="horizontalMenu-arrow fa fa-angle-down"></i></span> <a href="javascript:void(0);">Categories <span class="fas fa-chevron-down"></span></a>
                                             <ul class="sub-menu">
                                                 <li aria-haspopup="true">
@@ -482,8 +482,16 @@ if($settings->active != 'on'){  ?>
                                                     </ul>
                                                 </li>
                                             </ul>
-                                        </li>
+                                        </li> -->
                                       
+                                        <li aria-haspopup="true">
+                                            <span class="horizontalMenu-click"><i class="horizontalMenu-arrow fa fa-angle-down"></i></span> <a href="/hospitals/{id}">Hospital</a>
+                                            
+                                        </li>
+                                        <li aria-haspopup="true">
+                                            <span class="horizontalMenu-click"><i class="horizontalMenu-arrow fa fa-angle-down"></i></span> <a href="javascript:void(0);">Clinic</a>
+                                            
+                                        </li>
                                         <li aria-haspopup="true">
                                             <span class="horizontalMenu-click"><i class="horizontalMenu-arrow fa fa-angle-down"></i></span> <a href="javascript:void(0);">Blog</a>
                                             
@@ -607,8 +615,46 @@ if($settings->active != 'on'){  ?>
                 </footer>
             </section>
             <!--Footer Section-->
+            
+
+            <!-- Appointment Modal -->
+            <div class="modal fade" id="appointmentModal" tabindex="-1" aria-labelledby="appointmentModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="appointmentModalLabel">Book an Appointment</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="/save_appointment" method="post">
+                                    @csrf
+                                    <input type="hidden" id="doctor_id" name="doctor_id">
+                                    
+                                    <div class="mb-3">
+                                        <label for="patient_name" class="form-label">Your Name</label>
+                                        <input type="text" class="form-control" id="patient_name" name="name" required>
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <label for="patient_phone" class="form-label">Phone Number</label>
+                                        <input type="text" class="form-control" id="patient_phone" name="mobile" required>
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <label for="appointment_date" class="form-label">Appointment Date</label>
+                                        <input type="date" class="form-control" id="appointment_date" name="date" required>
+                                    </div>
+                                    
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+
+                                    
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             <!-- Popup Login-->
-            <div class="modal" id="exampleModal">
+            <!-- <div class="modal" id="exampleModal">
                 <div class="modal-dialog modal-lg modal-appoint" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -760,7 +806,7 @@ if($settings->active != 'on'){  ?>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <!-- End Popup Login-->
             <!-- buynow modal -->
             <div class="modal buynow buynow-btn">
@@ -859,6 +905,27 @@ if($settings->active != 'on'){  ?>
 
 
 
+    <script>
+        
+        document.addEventListener("DOMContentLoaded", function () {
+            const appointmentButtons = document.querySelectorAll(".appointment-btn");
+
+            appointmentButtons.forEach(button => {
+                button.addEventListener("click", function () {
+                    let doctorId = this.getAttribute("data-doctor-id");
+                    let doctorName = this.getAttribute("data-doctor-name");
+
+                    document.getElementById("doctor_id").value = doctorId;
+                    document.getElementById("appointmentModalLabel").innerText = "Book an Appointment with " + doctorName;
+
+                    let appointmentModal = new bootstrap.Modal(document.getElementById("appointmentModal"));
+                    appointmentModal.show();
+                });
+            });
+        });
+
+
+    </script>
 
 
 
